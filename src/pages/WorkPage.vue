@@ -6,6 +6,116 @@ import ModeToggle from '../components/ModeToggle.vue'
 import SiteNav from '../components/SiteNav.vue'
 import { LINKS } from '../constants/links'
 
+const skills = [
+  ['terminal', 'Python'],
+  ['javascript', 'JavaScript'],
+  ['layers', 'Vue.js'],
+  ['web', 'Django'],
+  ['hub', 'Frappe'],
+  ['settings_suggest', 'ERPNext / HRMS'],
+  ['api', 'REST API'],
+  ['database', 'MariaDB / SQL'],
+  ['storage', 'PostgreSQL'],
+  ['bolt', 'Redis'],
+  ['dns', 'Ubuntu / Nginx'],
+  ['sync', 'GitHub Actions']
+]
+
+const work = [
+  {
+    icon: 'payments',
+    label: 'Lead developer',
+    tags: ['HR', 'Payroll', 'ERPNext'],
+    title: 'Payroll & overtime engine',
+    body: 'Lead developer of the company HR app, automating overtime, attendance rules and payroll posting.'
+  },
+  {
+    icon: 'account_tree',
+    label: 'Reusable',
+    tags: ['Workflow', 'HR', 'Purchasing'],
+    title: 'Multi-level approval engine',
+    body: 'A reusable, template-driven approval workflow used across HR and purchasing for multiple clients.'
+  },
+  {
+    icon: 'confirmation_number',
+    label: 'Solo build',
+    tags: ['Ticketing', 'Projects', 'Portal'],
+    title: 'Client support platform',
+    body: "The company's ticketing and project system, with a customer portal, response-time tracking and dashboards."
+  },
+  {
+    icon: 'sync_alt',
+    label: 'Integrations',
+    tags: ['REST', 'SAP B1', 'Banking'],
+    title: 'APIs & integrations',
+    body: 'REST APIs for the company mobile app, and ERPNext integrations with SAP B1 and Jamuna Bank transaction APIs.'
+  },
+  {
+    icon: 'hub',
+    label: 'Client delivery',
+    tags: ['ERP', 'Python', 'Frappe'],
+    title: 'Client solutions',
+    body: 'Custom HR, payroll, CRM, selling and buying modules for LPG, healthcare, food and trade clients, plus an overseas recruitment app built from scratch.'
+  },
+  {
+    icon: 'speed',
+    label: 'End-to-end',
+    tags: ['Redis', 'CI/CD', 'Nginx'],
+    title: 'Performance & delivery',
+    body: 'Added Redis caching, set up GitHub Actions CI/CD and deployed on Ubuntu / Nginx, working directly with clients from requirements to production.'
+  }
+]
+
+const projects = [
+  {
+    title: 'playS — Tap-to-Launch',
+    url: 'https://github.com/Mahin-Abrar/playS',
+    tags: ['Python', 'Audio DSP'],
+    body: "Launches apps by tapping the laptop body, detecting the tap and its side from stereo-mic audio using only Python's standard library."
+  },
+  {
+    title: 'ERPNext Load Testing Suite',
+    url: 'https://github.com/Mahin-Abrar/performance_testing',
+    tags: ['Python', 'Locust', 'Frappe'],
+    body: 'Locust suite that seeds realistic ERPNext data and load-tests up to 100 concurrent users, with HTML/CSV reports.'
+  },
+  {
+    title: 'DaysGone',
+    url: 'https://github.com/Mahin-Abrar/DaysGone',
+    tags: ['Django', 'Redis', 'HTMX', 'PWA'],
+    body: 'Self-hosted habit, expense and planning tracker with Redis caching, streaks and charts.'
+  },
+  {
+    title: 'Frappe core fix',
+    url: 'https://github.com/frappe/frappe/pull/27227',
+    tags: ['Open source', 'Frappe'],
+    body: 'Reported a duplicate-email bug in Frappe; the fix was merged and backported to v14 and v15.'
+  },
+  {
+    title: 'Customised Listview',
+    url: 'https://github.com/Mahin-Abrar/Customised-Listview',
+    tags: ['Open source', 'Frappe UI'],
+    body: 'Author of a Frappe UI list view app, and contributor to Enhanced Child Table.'
+  }
+]
+
+const credentials = [
+  ['school', 'BSc in Computer Science and Engineering', 'Anna University · 2019 – 2023 · CGPA 8.40 / 10', ''],
+  [
+    'article',
+    'An Innovative Healthcare Records Management System with Ethereum and IPFS',
+    'IJSREM paper · 2023',
+    'https://ijsrem.com/download/an-innovative-healthcare-records-management-system-with-ethereum-and-ipfs'
+  ],
+  [
+    'workspace_premium',
+    'Plasma Donation app on IBM Cloud',
+    'IBM certification · ICT Academy, IBM Skills Network',
+    'https://courses.ictacademy.skillsnetwork.site/certificates/5dddb82c4d74453a85c9969ea8601778'
+  ],
+  ['translate', 'IELTS Band 7', 'English proficiency', '']
+]
+
 onMounted(() => {
   gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((el) => {
     gsap.fromTo(
@@ -48,9 +158,12 @@ onMounted(() => {
       </div>
 
       <div class="max-w-[80%]">
-        <h1 class="font-headline font-black text-7xl md:text-9xl tracking-tighter leading-none mb-8 text-on-surface text-reveal">
+        <h1 class="font-headline font-black text-[15vw] md:text-9xl tracking-tighter leading-none mb-8 text-on-surface text-reveal">
           <span>MAHIN ABRAR</span>
         </h1>
+        <p class="font-label uppercase tracking-widest text-sm text-on-surface-variant mb-6">
+          Software Engineer · Python · Frappe / ERPNext · Backend &amp; Automation
+        </p>
         <p class="font-headline italic text-xl md:text-2xl text-primary opacity-90 typing-cursor">
           Building systems by day, exploring the cosmos by night.
         </p>
@@ -78,40 +191,17 @@ onMounted(() => {
       <div class="relative z-10 max-w-7xl mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           <div
+            v-for="([icon, name], i) in skills"
+            :key="name"
             class="group bg-surface-container-high p-8 border border-outline-variant/10 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]"
           >
-            <div class="mb-4"><span class="material-symbols-outlined text-primary text-3xl">terminal</span></div>
-            <span class="font-label text-xs tracking-widest uppercase text-on-surface-variant group-hover:text-primary">Python</span>
-          </div>
-          <div
-            class="group bg-surface-container-high p-8 border border-outline-variant/10 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]"
-          >
-            <div class="mb-4"><span class="material-symbols-outlined text-secondary text-3xl">javascript</span></div>
-            <span class="font-label text-xs tracking-widest uppercase text-on-surface-variant group-hover:text-secondary">JavaScript</span>
-          </div>
-          <div
-            class="group bg-surface-container-high p-8 border border-outline-variant/10 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]"
-          >
-            <div class="mb-4"><span class="material-symbols-outlined text-primary text-3xl">layers</span></div>
-            <span class="font-label text-xs tracking-widest uppercase text-on-surface-variant group-hover:text-primary">Vue.js</span>
-          </div>
-          <div
-            class="group bg-surface-container-high p-8 border border-outline-variant/10 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]"
-          >
-            <div class="mb-4"><span class="material-symbols-outlined text-secondary text-3xl">api</span></div>
-            <span class="font-label text-xs tracking-widest uppercase text-on-surface-variant group-hover:text-secondary">REST API</span>
-          </div>
-          <div
-            class="group bg-surface-container-high p-8 border border-outline-variant/10 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]"
-          >
-            <div class="mb-4"><span class="material-symbols-outlined text-primary text-3xl">hub</span></div>
-            <span class="font-label text-xs tracking-widest uppercase text-on-surface-variant group-hover:text-primary">Frappe</span>
-          </div>
-          <div
-            class="group bg-surface-container-high p-8 border border-outline-variant/10 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]"
-          >
-            <div class="mb-4"><span class="material-symbols-outlined text-secondary text-3xl">settings_suggest</span></div>
-            <span class="font-label text-xs tracking-widest uppercase text-on-surface-variant group-hover:text-secondary">ERPNext</span>
+            <div class="mb-4">
+              <span class="material-symbols-outlined text-3xl" :class="i % 2 ? 'text-secondary' : 'text-primary'">{{ icon }}</span>
+            </div>
+            <span
+              class="font-label text-xs tracking-widest uppercase text-on-surface-variant"
+              :class="i % 2 ? 'group-hover:text-secondary' : 'group-hover:text-primary'"
+            >{{ name }}</span>
           </div>
         </div>
 
@@ -129,91 +219,73 @@ onMounted(() => {
     </section>
 
     <section class="py-32 px-12 relative overflow-hidden scroll-mt-28" id="work" data-reveal>
-      <h2 class="font-headline font-black text-8xl tracking-tighter mb-24 opacity-80">WORK</h2>
+      <h2 class="font-headline font-black text-[11vw] md:text-8xl tracking-tighter mb-6 opacity-80">WORK</h2>
+      <p class="font-label uppercase tracking-widest text-sm text-on-surface-variant mb-24">
+        Software Engineer · Fusion Infotech Ltd · Sep 2023 – Present
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl">
         <article
-          class="group relative overflow-hidden rounded-xl bg-surface-container-low p-10 transition-all duration-500 hover:bg-surface-container hover:shadow-[0_0_50px_rgba(59,130,246,0.12)] hover:-translate-y-1 nebula-glow"
+          v-for="(item, i) in work"
+          :key="item.title"
+          class="group relative overflow-hidden rounded-xl bg-surface-container-low p-10 transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 nebula-glow"
+          :class="i % 2 ? 'hover:shadow-[0_0_50px_rgba(124,58,237,0.15)]' : 'hover:shadow-[0_0_50px_rgba(59,130,246,0.12)]'"
         >
           <div class="flex items-start justify-between gap-6">
-            <div class="h-12 w-12 rounded-full border border-secondary/25 flex items-center justify-center bg-surface-container-high/50">
-              <span class="material-symbols-outlined text-secondary text-2xl">groups</span>
+            <div
+              class="h-12 w-12 rounded-full border flex items-center justify-center bg-surface-container-high/50"
+              :class="i % 2 ? 'border-primary/25' : 'border-secondary/25'"
+            >
+              <span class="material-symbols-outlined text-2xl" :class="i % 2 ? 'text-primary' : 'text-secondary'">{{ item.icon }}</span>
             </div>
-            <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Collaboration</span>
+            <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">{{ item.label }}</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-8 mb-4">
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">HR</span>
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">Payroll</span>
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">ERPNext</span>
+            <span v-for="tag in item.tags" :key="tag" class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">{{ tag }}</span>
           </div>
-          <h3 class="font-headline text-2xl md:text-3xl mb-4 text-on-surface">HR &amp; payroll solutions</h3>
-          <p class="text-on-surface-variant font-light leading-relaxed">
-            Collaboratively worked on human resources and payroll solutions—covering workflows, configuration, and delivery so teams can run
-            compensation and people operations reliably on one stack.
-          </p>
-        </article>
-
-        <article
-          class="group relative overflow-hidden rounded-xl bg-surface-container-low p-10 transition-all duration-500 hover:bg-surface-container hover:shadow-[0_0_50px_rgba(124,58,237,0.15)] hover:-translate-y-1 nebula-glow"
-        >
-          <div class="flex items-start justify-between gap-6">
-            <div class="h-12 w-12 rounded-full border border-primary/25 flex items-center justify-center bg-surface-container-high/50">
-              <span class="material-symbols-outlined text-primary text-2xl">hub</span>
-            </div>
-            <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Collaboration</span>
-          </div>
-          <div class="flex flex-wrap gap-2 mt-8 mb-4">
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">ERP</span>
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">Python</span>
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">Frappe</span>
-          </div>
-          <h3 class="font-headline text-2xl md:text-3xl mb-4 text-on-surface">ERP solutions</h3>
-          <p class="text-on-surface-variant font-light leading-relaxed">
-            Contributed to enterprise resource planning implementations: customizing modules, integrating business logic, and aligning ERP behavior
-            with how the organization actually operates.
-          </p>
-        </article>
-
-        <article
-          class="group relative overflow-hidden rounded-xl bg-surface-container-low p-10 transition-all duration-500 hover:bg-surface-container hover:shadow-[0_0_50px_rgba(124,58,237,0.15)] hover:-translate-y-1 nebula-glow"
-        >
-          <div class="flex items-start justify-between gap-6">
-            <div class="h-12 w-12 rounded-full border border-primary/25 flex items-center justify-center bg-surface-container-high/50">
-              <span class="material-symbols-outlined text-primary text-2xl">confirmation_number</span>
-            </div>
-            <span class="font-label text-[10px] tracking-widest uppercase text-primary">Solo build</span>
-          </div>
-          <div class="flex flex-wrap gap-2 mt-8 mb-4">
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">Ticketing</span>
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">Full stack</span>
-          </div>
-          <h3 class="font-headline text-2xl md:text-3xl mb-4 text-on-surface">Ticket management solution</h3>
-          <p class="text-on-surface-variant font-light leading-relaxed">
-            Single-handedly built a ticket management solution end to end—from data model and business rules to the interfaces teams use to triage,
-            assign, and close work.
-          </p>
-        </article>
-
-        <article
-          class="group relative overflow-hidden rounded-xl bg-surface-container-low p-10 transition-all duration-500 hover:bg-surface-container hover:shadow-[0_0_50px_rgba(59,130,246,0.12)] hover:-translate-y-1 nebula-glow"
-        >
-          <div class="flex items-start justify-between gap-6">
-            <div class="h-12 w-12 rounded-full border border-secondary/25 flex items-center justify-center bg-surface-container-high/50">
-              <span class="material-symbols-outlined text-secondary text-2xl">view_kanban</span>
-            </div>
-            <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">End-to-end</span>
-          </div>
-          <div class="flex flex-wrap gap-2 mt-8 mb-4">
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">PM</span>
-            <span class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">Delivery</span>
-          </div>
-          <h3 class="font-headline text-2xl md:text-3xl mb-4 text-on-surface">Project management solution</h3>
-          <p class="text-on-surface-variant font-light leading-relaxed">
-            Built a project management solution to plan work, track progress, and keep ownership visible—so initiatives move from intake to done
-            without losing context.
-          </p>
+          <h3 class="font-headline text-2xl md:text-3xl mb-4 text-on-surface">{{ item.title }}</h3>
+          <p class="text-on-surface-variant font-light leading-relaxed">{{ item.body }}</p>
         </article>
       </div>
+    </section>
+
+    <section class="py-32 px-12 relative overflow-hidden bg-surface-container-lowest scroll-mt-28" id="projects" data-reveal>
+      <h2 class="font-headline font-black text-[11vw] md:text-8xl tracking-tighter mb-24 opacity-80">PROJECTS</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
+        <a
+          v-for="item in projects"
+          :key="item.title"
+          :href="item.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative overflow-hidden rounded-xl bg-surface-container-low p-10 transition-all duration-500 hover:bg-surface-container hover:shadow-[0_0_50px_rgba(124,58,237,0.15)] hover:-translate-y-1"
+        >
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span v-for="tag in item.tags" :key="tag" class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">{{ tag }}</span>
+          </div>
+          <h3 class="font-headline text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">
+            {{ item.title }}
+            <span class="material-symbols-outlined text-base align-middle opacity-50">north_east</span>
+          </h3>
+          <p class="text-on-surface-variant font-light leading-relaxed">{{ item.body }}</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="py-32 px-12 relative overflow-hidden scroll-mt-28" id="credentials" data-reveal>
+      <h2 class="font-headline font-black text-[11vw] md:text-8xl tracking-tighter mb-24 opacity-80">CREDENTIALS</h2>
+
+      <ul class="max-w-4xl divide-y divide-outline-variant/15">
+        <li v-for="[icon, title, meta, url] in credentials" :key="title" class="flex items-start gap-6 py-8">
+          <span class="material-symbols-outlined text-primary text-2xl">{{ icon }}</span>
+          <div>
+            <a v-if="url" :href="url" target="_blank" rel="noopener noreferrer" class="font-headline text-xl md:text-2xl text-on-surface hover:text-primary transition-colors">{{ title }}</a>
+            <h3 v-else class="font-headline text-xl md:text-2xl text-on-surface">{{ title }}</h3>
+            <p class="font-label text-xs tracking-widest uppercase text-on-surface-variant mt-2">{{ meta }}</p>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <BioArchive />
