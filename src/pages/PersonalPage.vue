@@ -96,7 +96,7 @@ onMounted(() => {
                 <h3 class="font-mono text-xl font-bold tracking-tight text-secondary">RAINBOW SIX SIEGE</h3>
                 <p class="font-body text-sm text-on-surface-variant/80">Tactical environmental destruction and precision entry protocols.</p>
                 <div class="pt-4 flex items-center gap-2">
-                  <span class="font-mono text-[10px] text-secondary tracking-widest uppercase">OPERATOR: Jäger</span>
+                  <span class="font-mono text-xs text-secondary tracking-widest uppercase">OPERATOR: Jäger</span>
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@ onMounted(() => {
                 <h3 class="font-mono text-xl font-bold tracking-tight text-primary">COUNTER-STRIKE</h3>
                 <p class="font-body text-sm text-on-surface-variant/80">Legacy mechanics. High-stakes utility and recoil mastery.</p>
                 <div class="pt-4 flex items-center gap-2">
-                  <span class="font-mono text-[10px] text-primary tracking-widest uppercase">STATUS: IN-ACTIVE</span>
+                  <span class="font-mono text-xs text-primary tracking-widest uppercase">STATUS: IN-ACTIVE</span>
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@ onMounted(() => {
                 <h3 class="font-mono text-xl font-bold tracking-tight text-secondary">VALORANT</h3>
                 <p class="font-body text-sm text-on-surface-variant/80">Ability-based strategy integrated with surgical gunplay.</p>
                 <div class="pt-4 flex items-center gap-2">
-                  <span class="font-mono text-[10px] text-secondary tracking-widest uppercase">RANK: DIAMOND 2</span>
+                  <span class="font-mono text-xs text-secondary tracking-widest uppercase">RANK: DIAMOND 2</span>
                 </div>
               </div>
             </div>
@@ -141,7 +141,7 @@ onMounted(() => {
                 <h3 class="font-mono text-xl font-bold tracking-tight text-primary">BATTLEFIELD</h3>
                 <p class="font-body text-sm text-on-surface-variant/80">Combined arms warfare and cinematic atmospheric chaos.</p>
                 <div class="pt-4 flex items-center gap-2">
-                  <span class="font-mono text-[10px] text-primary tracking-widest uppercase">ROLE: ENGINEER</span>
+                  <span class="font-mono text-xs text-primary tracking-widest uppercase">ROLE: ENGINEER</span>
                 </div>
               </div>
             </div>
@@ -241,7 +241,7 @@ onMounted(() => {
             EMAIL
           </a>
         </div>
-        <p class="font-mono text-[10px] text-slate-600 tracking-widest pt-12">© 2024 THE CELESTIAL ARCHIVE — ALL RIGHTS RESERVED</p>
+        <p class="font-mono text-xs text-slate-400 tracking-widest pt-12">© {{ new Date().getFullYear() }} THE CELESTIAL ARCHIVE — ALL RIGHTS RESERVED</p>
         <div class="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
       </footer>
 

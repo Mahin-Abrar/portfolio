@@ -175,9 +175,17 @@ onMounted(() => {
           </a>
           <a
             class="group relative px-10 py-4 border border-outline-variant/20 hover:border-outline-variant transition-colors duration-300"
-            href="#about"
+            :href="LINKS.resume"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <span class="font-label uppercase tracking-widest text-sm relative z-10">About</span>
+            <span class="font-label uppercase tracking-widest text-sm relative z-10">Résumé</span>
+          </a>
+          <a
+            class="group relative px-10 py-4 border border-outline-variant/20 hover:border-outline-variant transition-colors duration-300"
+            :href="LINKS.email"
+          >
+            <span class="font-label uppercase tracking-widest text-sm relative z-10">Email Me</span>
           </a>
         </div>
       </div>
@@ -185,7 +193,7 @@ onMounted(() => {
 
     <section class="relative py-32 px-12 bg-surface-container-lowest scroll-mt-28" id="about" data-reveal>
       <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden pointer-events-none">
-        <span class="font-headline text-[25vw] font-black opacity-[0.03] tracking-tighter select-none">ARSENAL</span>
+        <span class="font-headline text-[25vw] font-black opacity-[0.03] tracking-tighter select-none">SKILLS</span>
       </div>
 
       <div class="relative z-10 max-w-7xl mx-auto">
@@ -208,11 +216,11 @@ onMounted(() => {
         <div class="mt-32 flex flex-col md:flex-row justify-between items-end gap-12">
           <div class="flex flex-col">
             <span class="font-label text-[120px] leading-none font-bold text-primary opacity-20 -mb-6">03+</span>
-            <span class="font-label uppercase tracking-widest text-sm text-outline">Years of Deep Space Dev</span>
+            <span class="font-label uppercase tracking-widest text-sm text-outline">Years of experience</span>
           </div>
           <div class="flex flex-col text-right">
-            <span class="font-label text-[120px] leading-none font-bold text-secondary opacity-20 -mb-6">10+</span>
-            <span class="font-label uppercase tracking-widest text-sm text-outline">Systems Deployed</span>
+            <span class="font-label text-[120px] leading-none font-bold text-secondary opacity-20 -mb-6">06</span>
+            <span class="font-label uppercase tracking-widest text-sm text-outline">Industries served</span>
           </div>
         </div>
       </div>
@@ -238,10 +246,10 @@ onMounted(() => {
             >
               <span class="material-symbols-outlined text-2xl" :class="i % 2 ? 'text-primary' : 'text-secondary'">{{ item.icon }}</span>
             </div>
-            <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">{{ item.label }}</span>
+            <span class="font-label text-xs tracking-widest uppercase text-on-surface-variant">{{ item.label }}</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-8 mb-4">
-            <span v-for="tag in item.tags" :key="tag" class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">{{ tag }}</span>
+            <span v-for="tag in item.tags" :key="tag" class="font-label text-xs border border-outline-variant px-2 py-0.5 rounded uppercase">{{ tag }}</span>
           </div>
           <h3 class="font-headline text-2xl md:text-3xl mb-4 text-on-surface">{{ item.title }}</h3>
           <p class="text-on-surface-variant font-light leading-relaxed">{{ item.body }}</p>
@@ -262,7 +270,7 @@ onMounted(() => {
           class="group relative overflow-hidden rounded-xl bg-surface-container-low p-10 transition-all duration-500 hover:bg-surface-container hover:shadow-[0_0_50px_rgba(124,58,237,0.15)] hover:-translate-y-1"
         >
           <div class="flex flex-wrap gap-2 mb-6">
-            <span v-for="tag in item.tags" :key="tag" class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded uppercase">{{ tag }}</span>
+            <span v-for="tag in item.tags" :key="tag" class="font-label text-xs border border-outline-variant px-2 py-0.5 rounded uppercase">{{ tag }}</span>
           </div>
           <h3 class="font-headline text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">
             {{ item.title }}
@@ -386,7 +394,7 @@ onMounted(() => {
           EMAIL
         </a>
       </div>
-      <div class="font-mono text-[10px] tracking-[0.3em] text-slate-600 mt-12">© 2024 THE CELESTIAL ARCHIVE</div>
+      <div class="font-mono text-xs tracking-[0.3em] text-slate-400 mt-12">© {{ new Date().getFullYear() }} THE CELESTIAL ARCHIVE</div>
     </footer>
   </div>
 </template>

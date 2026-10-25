@@ -43,7 +43,7 @@ const imgFailed = ref(false)
               class="w-full h-full min-h-[320px] flex flex-col items-center justify-center bg-surface-container-high text-on-surface-variant p-8 text-center"
             >
               <span class="font-headline text-6xl font-black text-primary/30 mb-4">MA</span>
-              <p class="font-mono text-[10px] tracking-widest uppercase leading-relaxed">
+              <p class="font-mono text-xs tracking-widest uppercase leading-relaxed">
                 Add your photo as
                 <span class="text-primary">src/images/profile.jpg</span>
               </p>

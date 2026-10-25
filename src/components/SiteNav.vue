@@ -11,7 +11,7 @@ const archiveTo = computed(() => ({
 }))
 
 const linkClass =
-  'font-mono text-[10px] tracking-widest uppercase text-slate-400 hover:text-violet-200 transition-colors duration-300 border-b border-transparent hover:border-violet-500/40 pb-1'
+  'font-mono text-xs tracking-widest uppercase text-slate-400 hover:text-violet-200 transition-colors duration-300 border-b border-transparent hover:border-violet-500/40 pb-1'
 </script>
 
 <template>
